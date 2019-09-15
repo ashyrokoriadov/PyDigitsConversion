@@ -3,6 +3,7 @@ from enum import Enum
 class Digit:
     """description of class"""
 
+    _default_separator = '.'
     _invalid_triad = "Invalid triad."
     _invalid_tetrad = "Invalid tetrad."
     _invalid_input_string = "Invalid input string: 1. input string is null or empty; 2. invalid separator."
