@@ -1,4 +1,3 @@
-import math 
 from digit import Digit, DigitType
 
 class BinaryDigit(Digit):
@@ -11,7 +10,7 @@ class BinaryDigit(Digit):
         self.digit_value = digit_value
 
     def get_decimal(self):
-        return self._get_decimal_integer() + self.separator + self._get_decimal_fraction()
+        return self._get_decimal_integer(2) + self.separator + self._get_decimal_fraction(2)
 
     def get_binary(self):
         return self.digit_value
@@ -37,37 +36,6 @@ class BinaryDigit(Digit):
         integer_part = self.convert_list_to_string_integer(self._get_hexadecimal_integer(integer))
         fraction_part = self.convert_list_to_string_integer(self._get_hexadecimal_fraction(fraction))
         return integer_part + self.separator + fraction_part
-
-    def _get_decimal_integer(self):
-        sum = 0
-        i = 0
-
-        value = self.digit_value.replace(self.separator, Digit._default_separator)
-        value = str(math.trunc(float(value)))
-
-        length = len(value)
-        for item in value:
-            sum += int(item) * (2 ** (length - i - 1))
-            i +=1
-        return  str(sum)
-
-    def _get_decimal_fraction(self):
-        sum = 0
-        i = 0
-
-        value = self.digit_value.replace(self.separator, Digit._default_separator)
-        separator_position = value.find(Digit._default_separator)
-
-        if separator_position == -1:
-            return "0"
-
-        value = value[separator_position+1:]
-
-        length = len(value)
-        for item in value:
-            sum += int(item) * (2 ** -(i + 1))
-            i +=1
-        return  str(sum)[2:]
 
     def _get_octal_integer(self, value):
         result =[]

@@ -1,4 +1,5 @@
 from enum import Enum
+import math 
 
 class Digit:
     """description of class"""
@@ -95,6 +96,56 @@ class Digit:
                 "1111" : 'F'
             }
         return switcher.get(tetrad, 'ZZZZ')
+
+    def _get_decimal_integer(self, digit_type):
+        sum = 0
+        i = 0
+
+        if self.separator in self.digit_value:
+            integer, fraction = self.digit_value.split(self.separator)
+        else:
+            integer = self.digit_value
+            fraction = '0'
+
+        value = integer
+
+        length = len(value)
+        for item in value:
+            if item.isdigit():
+                sum += int(item) * (digit_type ** (length - i - 1))
+            else:
+                item = self.get_number_for_letter(item)
+                sum += int(item) * (digit_type ** (length - i - 1))
+            i +=1
+        return  str(sum)
+
+    def _get_decimal_fraction(self, digit_type):
+        sum = 0
+        i = 0
+
+        value = self.digit_value.replace(self.separator, Digit._default_separator)
+        separator_position = value.find(Digit._default_separator)
+
+        if separator_position == -1:
+            return "0"
+
+        value = value[separator_position+1:]
+
+        length = len(value)
+        for item in value:
+            if item.isdigit():
+                sum += int(item) * (digit_type ** -(i + 1))
+            else:
+                item = self.get_number_for_letter(item)
+                sum += int(item) * (digit_type ** (length - i - 1))
+            i +=1
+
+        sum = str(sum)
+        separator_position = sum.find(Digit._default_separator)
+        if separator_position == -1:
+            return "0"
+        return str(sum)[separator_position+1:]
+
     pass
 
 class DigitType(Enum):

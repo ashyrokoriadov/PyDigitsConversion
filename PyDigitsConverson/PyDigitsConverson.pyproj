@@ -30,6 +30,12 @@
     <Compile Include="digit.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="hexadecimal_digit.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="octal_digit.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PyDigitsConverson.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

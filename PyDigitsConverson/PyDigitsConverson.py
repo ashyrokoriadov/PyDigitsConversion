@@ -1,6 +1,8 @@
 from digit import Digit, DigitType
 from decimal_digit import DecimalDigit
 from binary_digit import BinaryDigit
+from octal_digit import OctalDigit
+from hexadecimal_digit import HexadecimalDigit
 
 digit1 = DecimalDigit()
 digit1.digit_value = '12'
@@ -39,3 +41,18 @@ print('110011111 = ' + digit6.get_binary())
 print('110011111 = ' + digit6.get_decimal())
 print('110011111 = ' + digit6.get_octal())
 print('110011111 = ' + digit6.get_hexadecimal())
+print('---------------------------')
+
+digit6 = OctalDigit(digit_value='617.44061115645', digit_type=8, separator='.')
+print('617.44061115645 = ' + digit6.get_binary())
+print('617.44061115645 = ' + digit6.get_decimal())
+print('617.44061115645 = ' + digit6.get_octal())
+print('617.44061115645 = ' + digit6.get_hexadecimal())
+print('---------------------------')
+
+digit6 = HexadecimalDigit(digit_value='18F.90624DD28', digit_type=16, separator='.')
+print('18F.90624DD28 = ' + digit6.get_binary())
+print('18F.90624DD28 = ' + digit6.get_decimal())
+print('18F.90624DD28 = ' + digit6.get_octal())
+print('18F.90624DD28 = ' + digit6.get_hexadecimal())
+print('---------------------------')
