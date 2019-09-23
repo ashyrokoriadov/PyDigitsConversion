@@ -32,10 +32,10 @@ class DecimalDigit(Digit):
     def _get_value(self, digit_type):
 
         integer_part_list = self._get_integer(digit_type) 
-        integer_part = self._convert_list_to_string_integer(integer_part_list)
+        integer_part = self.convert_list_to_string_integer(integer_part_list)
 
         fraction_part_list = self._get_fraction(digit_type)
-        fraction_part = self._convert_list_to_string_fraction(fraction_part_list)
+        fraction_part = self.convert_list_to_string_fraction(fraction_part_list)
 
         return integer_part + self.separator + fraction_part
 
@@ -83,30 +83,7 @@ class DecimalDigit(Digit):
             result.append(integer_part)
             value = fractional_part
 
-        return result
-
-    def _convert_list_to_string_integer(self, list):
-
-        result_value = ''
-        for item in list:
-            result_value = result_value + str(item) 
-
-        return result_value
-
-    def _convert_list_to_string_fraction(self, list):
-
-        result_value = ''
-        counter = 0
-
-        for item in list:
-
-            if(counter == 10):
-                break
-
-            result_value = result_value + str(item) 
-            counter += 1
-
-        return result_value
+        return result           
 
     def _convert_list_to_string_integer_hexadecimal(self, list):
 

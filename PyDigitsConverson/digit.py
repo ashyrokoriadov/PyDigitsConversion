@@ -38,6 +38,42 @@ class Digit:
             15 : 'F',
         }
         return switcher.get(number, 'Z')
+
+    def convert_list_to_string_integer(self, list):
+
+        result_value = ''
+        for item in list:
+            result_value = result_value + str(item) 
+
+        return result_value
+
+    def convert_list_to_string_fraction(self, list):
+
+        result_value = ''
+        counter = 0
+
+        for item in list:
+
+            if(counter == 10):
+                break
+
+            result_value = result_value + str(item) 
+            counter += 1
+
+        return result_value
+
+    def _get_octal_for_triad(self, triad):
+        switcher = {
+                "000" : '0',
+                "001" : '1',
+                "010" : '2',
+                "011" : '3',
+                "100" : '4',
+                "101" : '5',
+                "110" : '6',
+                "111" : '7',
+            }
+        return switcher.get(triad, '222')
     pass
 
 class DigitType(Enum):

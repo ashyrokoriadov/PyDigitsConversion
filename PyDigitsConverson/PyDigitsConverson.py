@@ -19,5 +19,11 @@ print(digit3.get_decimal())
 digit4 = DecimalDigit(digit_value='399.564', digit_type=10, separator=',')
 print("399.564 = " + digit4.get_binary()) #1100
 
-digit5 = BinaryDigit(digit_value='110011111.1001000001', digit_type=2, separator='.')
-print(digit5.get_decimal())
+digit5 = BinaryDigit(digit_value='110011111.10010100011', digit_type=2, separator='.')
+print('110011111.1001010001 = ' + digit5.get_decimal())
+print('110011111.1001010001 = ' + digit5.get_octal())
+print('---------------------------')
+
+digit6 = BinaryDigit(digit_value='110011111', digit_type=2, separator='.')
+print('110011111 = ' + digit6.get_decimal())
+print('110011111 = ' + digit6.get_octal())
