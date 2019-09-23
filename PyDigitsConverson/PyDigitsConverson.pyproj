@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>23b72053-640a-48ff-919d-a6192341b970</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>PyDigitsConverson.py</StartupFile>
+    <StartupFile>UnitTests\DecimalDigitUnitTests.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -37,6 +37,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PyDigitsConverson.py" />
+    <Compile Include="UnitTests\DecimalDigitUnitTests.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UnitTests\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
