@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PyDigitsConverson", "PyDigitsConverson\PyDigitsConverson.pyproj", "{23B72053-640A-48FF-919D-A6192341B970}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PyDigitsConversion", "PyDigitsConverson\PyDigitsConversion.pyproj", "{23B72053-640A-48FF-919D-A6192341B970}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gitfiles", "gitfiles", "{57F26675-E3F0-4FBB-915B-BDDD9FEF4766}"
 	ProjectSection(SolutionItems) = preProject

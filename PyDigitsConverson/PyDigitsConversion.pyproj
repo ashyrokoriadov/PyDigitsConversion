@@ -3,13 +3,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>23b72053-640a-48ff-919d-a6192341b970</ProjectGuid>
-    <ProjectHome>.</ProjectHome>
-    <StartupFile>PyDigitsConverson.py</StartupFile>
+    <ProjectHome>
+    </ProjectHome>
+    <StartupFile>PyDigitsConversion.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>PyDigitsConverson</Name>
+    <Name>PyDigitsConversion</Name>
     <RootNamespace>PyDigitsConverson</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -36,7 +37,7 @@
     <Compile Include="octal_digit.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PyDigitsConverson.py" />
+    <Compile Include="PyDigitsConversion.py" />
     <Compile Include="UnitTests\DecimalDigitUnitTests.py">
       <SubType>Code</SubType>
     </Compile>
