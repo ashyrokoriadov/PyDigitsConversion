@@ -28,7 +28,15 @@ class BinaryDigit(Digit):
         return integer_part + self.separator + fraction_part
 
     def get_hexadecimal(self):
-        return self._get_value(16)
+        if self.separator in self.digit_value:
+            integer, fraction = self.digit_value.split(self.separator)
+        else:
+            integer = self.digit_value
+            fraction = '0'
+
+        integer_part = self.convert_list_to_string_integer(self._get_hexadecimal_integer(integer))
+        fraction_part = self.convert_list_to_string_integer(self._get_hexadecimal_fraction(fraction))
+        return integer_part + self.separator + fraction_part
 
     def _get_decimal_integer(self):
         sum = 0
@@ -112,6 +120,60 @@ class BinaryDigit(Digit):
         return result
         pass
 
+    def _get_hexadecimal_integer(self, value):
+        result =[]
+        length = len(value)
+        counter = length
+
+        while counter > 0:
+
+            if(counter - 4 >= 0):
+                tetrad = value[counter - 4:counter]
+            else:
+                additional_zeros = ""
+                if(counter==3):
+                    additional_zeros = "0"
+                if(counter==2):
+                    additional_zeros = "00"
+                if(counter==1):
+                    additional_zeros = "000"
+                tetrad = additional_zeros + value[0:counter]
+            
+            result.append(self._get_hexadecimal_for_tetrad(tetrad))
+            counter -= 4
+
+        result.reverse()
+        return result
+
+    def _get_hexadecimal_fraction(self, value):              
+
+        result =[]
+        if value =='0':
+            result.append(value)
+            return result
+
+        length = len(value)
+        counter = 0
+
+        while counter < length:
+
+            if(counter + 4 <= length):
+                tetrad = value[counter:counter+4]
+            else:
+                additional_zeros = ""
+                if(length - counter==3):
+                    additional_zeros = "0"
+                if(length - counter==2):
+                    additional_zeros = "00"
+                if(length - counter==1):
+                    additional_zeros = "000"
+                tetrad = value[counter:length] + additional_zeros
+            
+            result.append(self._get_hexadecimal_for_tetrad(tetrad))
+            counter += 4
+
+        return result
+        pass
 
       
 
