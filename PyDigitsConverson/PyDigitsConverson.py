@@ -4,7 +4,7 @@ from binary_digit import BinaryDigit
 from octal_digit import OctalDigit
 from hexadecimal_digit import HexadecimalDigit
 
-digit1 = DecimalDigit()
+digit1 =  DecimalDigit()
 digit1.digit_value = '12'
 print(digit1.get_binary()) #1100
 print(digit1.get_octal()) #14
