@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>23b72053-640a-48ff-919d-a6192341b970</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>UnitTests\DecimalDigitUnitTests.py</StartupFile>
+    <StartupFile>PyDigitsConverson.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -38,6 +38,9 @@
     </Compile>
     <Compile Include="PyDigitsConverson.py" />
     <Compile Include="UnitTests\DecimalDigitUnitTests.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTests\__init__.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
