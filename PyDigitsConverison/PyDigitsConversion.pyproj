@@ -5,13 +5,13 @@
     <ProjectGuid>23b72053-640a-48ff-919d-a6192341b970</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>PyDigitsConversion.py</StartupFile>
+    <StartupFile>UnitTests\DecimalDigitUnitTests.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>PyDigitsConversion</Name>
-    <RootNamespace>PyDigitsConverson</RootNamespace>
+    <RootNamespace>PyDigitsConversion</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
