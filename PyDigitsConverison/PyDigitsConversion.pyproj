@@ -5,7 +5,7 @@
     <ProjectGuid>23b72053-640a-48ff-919d-a6192341b970</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>UnitTests\DecimalDigitUnitTests.py</StartupFile>
+    <StartupFile>UnitTests\DigitUnitTests.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -38,7 +38,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PyDigitsConversion.py" />
-    <Compile Include="UnitTests\DecimalDigitUnitTests.py">
+    <Compile Include="UnitTests\DigitUnitTests.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="UnitTests\__init__.py">
