@@ -145,7 +145,7 @@ class Test_HexadecimalDigit(unittest.TestCase):
 
     def test_conversion_to_binary_integer__and_fractional_parts(self):
         binary_digit = self.digit_integer_and_fraction.get_binary()        
-        self.assertEqual(binary_digit, "1001110001.00011100001", "16: 271.1C28 should be 2: 1001110001.00011100001")
+        self.assertEqual(binary_digit, "1001110001.0001110000", "16: 271.1C28 should be 2: 1001110001.0001110000")
 
     def test_conversion_to_decimal_only_integer_part(self):
         decimal_digit_new = self.decimal_digit_integer.get_decimal()       
@@ -153,7 +153,7 @@ class Test_HexadecimalDigit(unittest.TestCase):
 
     def test_conversion_to_decimal_integer__and_fractional_parts(self):
         decimal_digit_new = self.digit_integer_and_fraction.get_decimal()        
-        self.assertEqual(decimal_digit_new, "625.11", "16: 271.1C28 should be 10: 625.11")
+        self.assertEqual(decimal_digit_new, "625.1099853515625", "16: 271.1C28 should be 10: 625.1099853515625")
 
     def test_conversion_to_octal_only_integer_part(self):
         octal_digit = self.decimal_digit_integer.get_octal()        
@@ -161,7 +161,7 @@ class Test_HexadecimalDigit(unittest.TestCase):
 
     def test_conversion_to_octal_integer__and_fractional_parts(self):
         octal_digit = self.digit_integer_and_fraction.get_octal()        
-        self.assertEqual(octal_digit, "1161.07024", "16: 271.1C28 should be 8: 1161.07024")
+        self.assertEqual(octal_digit, "1161.0702436560", "16: 271.1C28 should be 8: 1161.0702436560")
 
     def test_conversion_to_hexadecimal_only_integer_part(self):
         hexadecimal_digit = self.decimal_digit_integer.get_hexadecimal()        

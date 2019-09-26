@@ -137,7 +137,7 @@ class Digit:
                 sum += int(item) * (digit_type ** -(i + 1))
             else:
                 item = self.get_number_for_letter(item)
-                sum += int(item) * (digit_type ** (length - i - 1))
+                sum += int(item) * (digit_type ** -(length - i - 1))
             i +=1
 
         sum = str(sum)
