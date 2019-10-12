@@ -160,6 +160,10 @@ class Digit:
            return True 
         except ValueError:
            return False
+
+    def _is_hexadecimal(self):
+        pattern = re.compile("^[A-Fa-f0-9\.]+$")
+        return pattern.match(self.digit_value)
     
     def _contains_whitespace(self):
         pattern = re.compile("^\s*$")
@@ -167,7 +171,12 @@ class Digit:
 
     def _validate(self):
         return not self._is_none() and not self._is_empty_string() and \
-            not self._contains_whitespace() and self._is_float_number()  
+            not self._contains_whitespace() and self._is_float_number()
+
+    def _validate_hexadecimal(self):
+        return not self._is_none() and not self._is_empty_string() and \
+            not self._contains_whitespace() and self._is_hexadecimal()
+
     pass
 
 class DigitType(Enum):

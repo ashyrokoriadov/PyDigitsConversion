@@ -11,19 +11,35 @@ class HexadecimalDigit(Digit):
         self.digit_value = digit_value
 
     def get_decimal(self):
+
+        if not self._validate_hexadecimal():
+            raise ValueError(self._validation_error)
+
         return self._get_decimal_integer(16) + self.separator + self._get_decimal_fraction(16)
 
     def get_binary(self):
+
+        if not self._validate_hexadecimal():
+            raise ValueError(self._validation_error)
+
         decimal = self.get_decimal()
         decimal_digit = DecimalDigit(digit_value=decimal, digit_type=10, separator=self.separator)
         return decimal_digit.get_binary()
 
     def get_octal(self):
+
+        if not self._validate_hexadecimal():
+            raise ValueError(self._validation_error)
+
         decimal = self.get_decimal()
         decimal_digit = DecimalDigit(digit_value=decimal, digit_type=10, separator=self.separator)
         return decimal_digit.get_octal()
 
     def get_hexadecimal(self):
+
+        if not self._validate_hexadecimal():
+            raise ValueError(self._validation_error)
+
         return self.digit_value
        
 
