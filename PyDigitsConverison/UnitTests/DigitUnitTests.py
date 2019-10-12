@@ -51,6 +51,86 @@ class Test_DecimalDigit(unittest.TestCase):
         hexadecimal_digit = self.decimal_digit.get_hexadecimal()        
         self.assertEqual(hexadecimal_digit, "4D2.8F5C28F5C2", "10: 1234.56 should be 16: 4D2.8F5C28F5C2")
 
+    def test_passed_value_is_null_hexadecimal(self):
+        self.decimal_digit.digit_value = None
+        with self.assertRaises(ValueError) as cm: 
+            self.decimal_digit.get_hexadecimal() 
+    
+    def test_passed_value_is_null_binary(self):
+        self.decimal_digit.digit_value = None
+        with self.assertRaises(ValueError) as cm: 
+            self.decimal_digit.get_binary() 
+
+    def test_passed_value_is_null_decimal(self):
+        self.decimal_digit.digit_value = None
+        with self.assertRaises(ValueError) as cm: 
+            self.decimal_digit.get_decimal() 
+
+    def test_passed_value_is_null_octal(self):
+        self.decimal_digit.digit_value = None
+        with self.assertRaises(ValueError) as cm:    
+            self.decimal_digit.get_octal()
+    
+    def test_passed_value_is_empty_hexadecimal(self):
+        self.decimal_digit.digit_value = ''
+        with self.assertRaises(ValueError) as cm: 
+            self.decimal_digit.get_hexadecimal() 
+    
+    def test_passed_value_is_empty_binary(self):
+        self.decimal_digit.digit_value = ''
+        with self.assertRaises(ValueError) as cm: 
+            self.decimal_digit.get_binary() 
+
+    def test_passed_value_is_empty_decimal(self):
+        self.decimal_digit.digit_value = ''
+        with self.assertRaises(ValueError) as cm: 
+            self.decimal_digit.get_decimal() 
+
+    def test_passed_value_is_empty_octal(self):
+        self.decimal_digit.digit_value = ''
+        with self.assertRaises(ValueError) as cm:    
+            self.decimal_digit.get_octal() 
+
+    def test_passed_value_is_nan_hexadecimal(self):
+        self.decimal_digit.digit_value = 'ABC'
+        with self.assertRaises(ValueError) as cm: 
+            self.decimal_digit.get_hexadecimal() 
+    
+    def test_passed_value_is_nan_binary(self):
+        self.decimal_digit.digit_value = 'ABC'
+        with self.assertRaises(ValueError) as cm: 
+            self.decimal_digit.get_binary() 
+
+    def test_passed_value_is_nan_decimal(self):
+        self.decimal_digit.digit_value = 'ABC'
+        with self.assertRaises(ValueError) as cm: 
+            self.decimal_digit.get_decimal() 
+
+    def test_passed_value_is_nan_octal(self):
+        self.decimal_digit.digit_value = 'ABC'
+        with self.assertRaises(ValueError) as cm:    
+            self.decimal_digit.get_octal() 
+
+    def test_passed_value_is_whitespace_hexadecimal(self):
+        self.decimal_digit.digit_value = '  '
+        with self.assertRaises(ValueError) as cm: 
+            self.decimal_digit.get_hexadecimal() 
+    
+    def test_passed_value_is_whitespace_binary(self):
+        self.decimal_digit.digit_value = '   '
+        with self.assertRaises(ValueError) as cm: 
+            self.decimal_digit.get_binary() 
+
+    def test_passed_value_is_whitespace_decimal(self):
+        self.decimal_digit.digit_value = '   '
+        with self.assertRaises(ValueError) as cm: 
+            self.decimal_digit.get_decimal() 
+
+    def test_passed_value_is_whitespace_octal(self):
+        self.decimal_digit.digit_value = '   '
+        with self.assertRaises(ValueError) as cm:    
+            self.decimal_digit.get_octal() 
+
 class Test_BinaryDigit(unittest.TestCase):
 
     def setUp(self):
@@ -90,6 +170,86 @@ class Test_BinaryDigit(unittest.TestCase):
     def test_conversion_to_hexadecimal_integer__and_fractional_parts(self):
         hexadecimal_digit = self.binary_digit_integer_and_fraction.get_hexadecimal()        
         self.assertEqual(hexadecimal_digit, "1D3.E3C", "2: 111010011.11100011110 should be 16: 1D3.E3C")
+
+    def test_passed_value_is_null_hexadecimal(self):
+        self.binary_digit_integer.digit_value = None
+        with self.assertRaises(ValueError) as cm: 
+            self.binary_digit_integer.get_hexadecimal() 
+    
+    def test_passed_value_is_null_binary(self):
+        self.binary_digit_integer.digit_value = None
+        with self.assertRaises(ValueError) as cm: 
+            self.binary_digit_integer.get_binary() 
+
+    def test_passed_value_is_null_decimal(self):
+        self.binary_digit_integer.digit_value = None
+        with self.assertRaises(ValueError) as cm: 
+            self.binary_digit_integer.get_decimal() 
+
+    def test_passed_value_is_null_octal(self):
+        self.binary_digit_integer.digit_value = None
+        with self.assertRaises(ValueError) as cm:    
+            self.binary_digit_integer.get_octal()
+    
+    def test_passed_value_is_empty_hexadecimal(self):
+        self.binary_digit_integer.digit_value = ''
+        with self.assertRaises(ValueError) as cm: 
+            self.binary_digit_integer.get_hexadecimal() 
+    
+    def test_passed_value_is_empty_binary(self):
+        self.binary_digit_integer.digit_value = ''
+        with self.assertRaises(ValueError) as cm: 
+            self.binary_digit_integer.get_binary() 
+
+    def test_passed_value_is_empty_decimal(self):
+        self.binary_digit_integer.digit_value = ''
+        with self.assertRaises(ValueError) as cm: 
+            self.binary_digit_integer.get_decimal() 
+
+    def test_passed_value_is_empty_octal(self):
+        self.binary_digit_integer.digit_value = ''
+        with self.assertRaises(ValueError) as cm:    
+            self.binary_digit_integer.get_octal() 
+
+    def test_passed_value_is_nan_hexadecimal(self):
+        self.binary_digit_integer.digit_value = 'ABC'
+        with self.assertRaises(ValueError) as cm: 
+            self.binary_digit_integer.get_hexadecimal() 
+    
+    def test_passed_value_is_nan_binary(self):
+        self.binary_digit_integer.digit_value = 'ABC'
+        with self.assertRaises(ValueError) as cm: 
+            self.binary_digit_integer.get_binary() 
+
+    def test_passed_value_is_nan_decimal(self):
+        self.binary_digit_integer.digit_value = 'ABC'
+        with self.assertRaises(ValueError) as cm: 
+            self.binary_digit_integer.get_decimal() 
+
+    def test_passed_value_is_nan_octal(self):
+        self.binary_digit_integer.digit_value = 'ABC'
+        with self.assertRaises(ValueError) as cm:    
+            self.binary_digit_integer.get_octal() 
+
+    def test_passed_value_is_whitespace_hexadecimal(self):
+        self.binary_digit_integer.digit_value = '  '
+        with self.assertRaises(ValueError) as cm: 
+            self.binary_digit_integer.get_hexadecimal() 
+    
+    def test_passed_value_is_whitespace_binary(self):
+        self.binary_digit_integer.digit_value = '   '
+        with self.assertRaises(ValueError) as cm: 
+            self.binary_digit_integer.get_binary() 
+
+    def test_passed_value_is_whitespace_decimal(self):
+        self.binary_digit_integer.digit_value = '   '
+        with self.assertRaises(ValueError) as cm: 
+            self.binary_digit_integer.get_decimal() 
+
+    def test_passed_value_is_whitespace_octal(self):
+        self.binary_digit_integer.digit_value = '   '
+        with self.assertRaises(ValueError) as cm:    
+            self.binary_digit_integer.get_octal() 
 
 class Test_OctalDigit(unittest.TestCase):
 

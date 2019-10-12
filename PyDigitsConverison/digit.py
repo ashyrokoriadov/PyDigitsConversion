@@ -1,5 +1,6 @@
 from enum import Enum
 import math 
+import re
 
 class Digit:
     """description of class"""
@@ -9,6 +10,7 @@ class Digit:
     _invalid_tetrad = "Invalid tetrad."
     _invalid_input_string = "Invalid input string: 1. input string is null or empty; 2. invalid separator."
     _separator_missmatch = "Input string and separator missmatch."
+    _validation_error = 'Value to be converted is None, empty, NaN or whitespace.'
 
     def __init__(self, digit_value='0', digit_type=10, separator='.'):
         self.separator = separator
@@ -146,6 +148,26 @@ class Digit:
             return "0"
         return str(sum)[separator_position+1:]
 
+    def _is_none(self):
+        return self.digit_value is None
+
+    def _is_empty_string(self):
+        return self.digit_value == ''
+
+    def _is_float_number(self):
+        try:
+           val = float(self.digit_value)
+           return True 
+        except ValueError:
+           return False
+    
+    def _contains_whitespace(self):
+        pattern = re.compile("^\s*$")
+        return pattern.match(self.digit_value)
+
+    def _validate(self):
+        return not self._is_none() and not self._is_empty_string() and \
+            not self._contains_whitespace() and self._is_float_number()  
     pass
 
 class DigitType(Enum):

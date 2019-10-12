@@ -10,12 +10,24 @@ class BinaryDigit(Digit):
         self.digit_value = digit_value
 
     def get_decimal(self):
+
+        if not self._validate():
+            raise ValueError(self._validation_error)
+
         return self._get_decimal_integer(2) + self.separator + self._get_decimal_fraction(2)
 
     def get_binary(self):
+
+        if not self._validate():
+            raise ValueError(self._validation_error)
+
         return self.digit_value
 
     def get_octal(self):
+
+        if not self._validate():
+            raise ValueError(self._validation_error)
+
         if self.separator in self.digit_value:
             integer, fraction = self.digit_value.split(self.separator)
         else:
@@ -27,6 +39,10 @@ class BinaryDigit(Digit):
         return integer_part + self.separator + fraction_part
 
     def get_hexadecimal(self):
+
+        if not self._validate():
+            raise ValueError(self._validation_error)
+
         if self.separator in self.digit_value:
             integer, fraction = self.digit_value.split(self.separator)
         else:

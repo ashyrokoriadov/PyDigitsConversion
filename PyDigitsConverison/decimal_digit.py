@@ -2,7 +2,7 @@ import math
 from digit import Digit, DigitType
 
 class DecimalDigit(Digit):
-    """description of class"""
+    """description of class"""   
 
     def __init__(self, digit_value='0', digit_type=10, separator='.'):
         super().__init__(digit_value=digit_value, digit_type=digit_type, separator=separator) 
@@ -11,15 +11,30 @@ class DecimalDigit(Digit):
         self.digit_value = digit_value
 
     def get_decimal(self):
+
+        if not self._validate():
+            raise ValueError(self._validation_error)
+
         return self.digit_value 
 
     def get_binary(self):
+
+        if not self._validate():
+            raise ValueError(self._validation_error)
+
         return self._get_value(2)
 
     def get_octal(self):
+
+        if not self._validate():
+            raise ValueError(self._validation_error)
+
         return self._get_value(8)
 
     def get_hexadecimal(self):
+
+        if not self._validate():
+            raise ValueError(self._validation_error)
 
         integer_part_list = self._get_integer(16) 
         integer_part = self._convert_list_to_string_integer_hexadecimal(integer_part_list)
@@ -39,7 +54,7 @@ class DecimalDigit(Digit):
 
         return integer_part + self.separator + fraction_part
 
-    def _get_integer(self, digit_type):
+    def _get_integer(self, digit_type):        
 
         result =[]
         value = self.digit_value.replace(self.separator, Digit._default_separator)
@@ -60,7 +75,7 @@ class DecimalDigit(Digit):
             result.append(devidend)
 
         result.reverse()
-        return result
+        return result    
 
     def _get_fraction(self, digit_type):
 
